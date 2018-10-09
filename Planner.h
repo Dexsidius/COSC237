@@ -4,17 +4,19 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <stdlib.h>
+#include <vector>
 #include <cmath>
 
 using namespace std;
 
 class Planner {
 public:
-	void shuffle_tasks(string[], int);
-
+	void shuffle_tasks(string, int);
+	void add_tasks();
 private:
 	int num_of_tasks;
-	string tasks[num_of_tasks];
+	vector<string> tasks;
 };
 
 
