@@ -14,7 +14,7 @@ class Planner {
 public:
 	Planner();
 	int get_number_of_tasks();
-	string get_task(string, int);
+	string get_random_task();
 	void add_tasks(string task);
 private:
 	int num_of_tasks;
