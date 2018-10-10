@@ -6,6 +6,11 @@ Planner::Planner()
 	tasks = {};
 }
 
+string Planner::display_greeting()
+{
+	return "";
+}
+
 int Planner::get_number_of_tasks()
 {
 	return num_of_tasks;
