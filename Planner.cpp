@@ -13,7 +13,7 @@ int Planner::get_number_of_tasks()
 
 string Planner::get_random_task()
 {
-	srand(1000);
+	srand(time(nullptr));
 	return tasks[int(rand() % get_number_of_tasks())];
 }
 

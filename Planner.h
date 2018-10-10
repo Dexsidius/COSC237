@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 #include <random>
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 #include <cmath>
 
