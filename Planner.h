@@ -12,8 +12,10 @@ using namespace std;
 
 class Planner {
 public:
-	void shuffle_tasks(string, int);
-	void add_tasks();
+	Planner();
+	int get_number_of_tasks();
+	string get_random_task();
+	void add_tasks(string task);
 private:
 	int num_of_tasks;
 	vector<string> tasks;
