@@ -18,6 +18,7 @@ public:
 	int get_number_of_tasks();
 	string get_random_task();
 	void add_tasks(string task);
+	void get_tasks_from_file(string);
 private:
 	string greetFile = "greeting.txt";
 	int num_of_tasks;

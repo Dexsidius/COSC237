@@ -27,3 +27,15 @@ void Planner::add_tasks(string t)
 	tasks.push_back(t);
 	num_of_tasks += 1;
 }
+
+void Planner::get_tasks_from_file(string file = "tasks.txt")
+{
+	ifstream FILE(file.c_str());
+	string line;
+	if (FILE.is_open()) {
+		while (getline(FILE,line)) {
+			add_tasks(line);
+		}
+		FILE.close();
+	}
+}
