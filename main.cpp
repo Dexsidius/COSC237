@@ -5,7 +5,7 @@ using namespace std;
 //Displays tasks
 void display_tasks(Planner planner){
 
-	while(planner.get_number_of_tasks() != -1){
+	while(planner.get_number_of_tasks() != 0){
 		cout << "Press Any Key For Task..." << endl;
 		cin.ignore();
 		cout << planner.get_random_task() << endl;
@@ -46,6 +46,7 @@ void get_tasks(Planner planner) {
 
 
 int main() {
+	system("clear");
 	Planner planner;
 	planner.display_greeting();
 	cout << "Do You want to use a file or input your tasks now? (f, i): ";
