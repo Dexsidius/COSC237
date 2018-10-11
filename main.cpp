@@ -2,6 +2,7 @@
 #include <stdlib.h>
 using namespace std;
 
+//Displays tasks
 void display_tasks(Planner planner){
 
 	while(planner.get_number_of_tasks() != -1){
@@ -11,6 +12,7 @@ void display_tasks(Planner planner){
 	}
 }
 
+//Gets User's Tasks and inputs them into class's 'task' attribute
 void get_tasks(Planner planner) {
 	string answer;
 	int number_of_tasks = 0;
@@ -26,6 +28,7 @@ void get_tasks(Planner planner) {
 		cout << "How many tasks do you want to add?: ";
 		cin >> number_of_tasks;
 		string task;
+		//For loop collecting user inputs
 		for (int i = 0; i < number_of_tasks; i++) {
 			cout << endl;
 			cout << "Task #" << i + 1 << "\n:: ";
