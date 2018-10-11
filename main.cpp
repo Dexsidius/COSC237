@@ -33,7 +33,7 @@ void get_tasks(Planner planner) {
 int main() {
 	Planner planner;
 	planner.display_greeting();
-	cout << "Do You want to use a file or input your tasks now? (f, i): ";
+	cout << "Do you want to use a file or input your tasks now? (f, i): ";
 	get_tasks(planner);
 
 	return 0;

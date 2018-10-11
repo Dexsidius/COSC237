@@ -25,6 +25,9 @@ int Planner::get_number_of_tasks()
 
 string Planner::get_random_task()
 {
+	if (tasks.size() == 0) {
+		return "There are no more tasks!";
+	}
 	srand(time(nullptr));
 	int i = int(rand() % get_number_of_tasks());
 	string temp = tasks[i];
@@ -32,6 +35,7 @@ string Planner::get_random_task()
 	tasks[int(tasks.size() - 1)] = temp;
 	string r = tasks.back();
 	tasks.pop_back();
+	num_of_tasks -= 1;
 	return r;
 }
 
