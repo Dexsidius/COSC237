@@ -2,18 +2,11 @@
 #include "Planner.h"
 
 //Displays tasks
-<<<<<<< HEAD
-void display_tasks(Planner planner){
-
-	while(planner.get_number_of_tasks() != 0){
-		cout << "Press Any Key For Task..." << endl;
-=======
 void display_tasks(Planner & planner){
 	cout << endl;
 	int tasks = 1;
 	while (planner.get_number_of_tasks() > 0) {
 		cout << "Press any key for a task..." << endl;
->>>>>>> branch 'master' of https://github.com/Dexsidius/COSC237.git
 		cin.ignore();
 		cout <<"TASK #"<<tasks<<": "<< planner.get_random_task() << endl;
 		cout << endl;

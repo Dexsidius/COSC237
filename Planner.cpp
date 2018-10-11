@@ -37,11 +37,8 @@ string Planner::get_random_task()
 	srand(time(nullptr));
 	int i = int(rand() % get_number_of_tasks());
 	string r = tasks[i];
-<<<<<<< HEAD
 	remove_task(i);
-=======
 	tasks.erase(tasks.begin()+i);
->>>>>>> branch 'master' of https://github.com/Dexsidius/COSC237.git
 	decrease_num_of_tasks();
 
 	return r;
