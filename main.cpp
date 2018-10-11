@@ -1,5 +1,15 @@
 #include "Planner.h"
+#include <stdlib.h>
 using namespace std;
+
+void display_tasks(Planner planner){
+
+	while(planner.get_number_of_tasks() != -1){
+		cout << "Press Any Key For Task..." << endl;
+		cin.ignore();
+		cout << planner.get_random_task() << endl;
+	}
+}
 
 void get_tasks(Planner planner) {
 	string answer;
@@ -28,13 +38,15 @@ void get_tasks(Planner planner) {
 		cout << "Invalid answer, answer with a 'f' for file, or 'i' for input: ";
 		get_tasks(planner);
 	}
+	display_tasks(planner);
 }
+
 
 int main() {
 	Planner planner;
 	planner.display_greeting();
 	cout << "Do You want to use a file or input your tasks now? (f, i): ";
 	get_tasks(planner);
-
+	display_tasks(planner);
 	return 0;
 }
