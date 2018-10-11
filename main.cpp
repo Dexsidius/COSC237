@@ -1,5 +1,5 @@
+//By Da'Shawn Larry, Isa Bolling, and Amir Scott
 #include "Planner.h"
-
 
 //Displays tasks
 void display_tasks(Planner & planner){
@@ -29,16 +29,14 @@ void get_tasks(Planner & planner) {
 	else if (answer == "i") {
 		cout << "How many tasks do you want to add?: ";
 		cin >> number_of_tasks;
+		cin.ignore();
 		string task;
 		//For loop collecting user inputs
 		for (int i = 0; i < number_of_tasks; i++) {
 			cout << endl;
 			cout << "Task #" << i + 1 << "\n:: ";
-			cin.ignore();
 			getline(cin, task);
-			task = " " + task;
-			planner.add_tasks(task);
-			
+			planner.add_tasks(task);	
 		}
 	}
 	else {
@@ -47,7 +45,6 @@ void get_tasks(Planner & planner) {
 	}
 	
 }
-
 
 int main() {
 	Planner planner;
