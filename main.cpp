@@ -7,7 +7,10 @@ void get_tasks(Planner planner) {
 	cin >> answer;
 	cout << endl;
 	if (answer == "f") {
-		cout << ""
+		cout << "Enter the file name (press enter or type 'default' for the default file): " ;
+		cin >> answer;
+		if ((answer == "") || (answer == "default")) planner.get_tasks_from_file();
+		else planner.get_tasks_from_file(answer);
 	}
 	else if (answer == "i") {
 		cout << "How many tasks do you want to add?: ";
