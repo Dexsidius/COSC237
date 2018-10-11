@@ -14,7 +14,7 @@ using namespace std;
 class Planner {
 public:
 	Planner();
-	string display_greeting();
+	void display_greeting();
 	int get_number_of_tasks();
 	string get_random_task();
 	void add_tasks(string task);

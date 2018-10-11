@@ -6,9 +6,16 @@ Planner::Planner()
 	tasks = {};
 }
 
-string Planner::display_greeting()
+void Planner::display_greeting()
 {
-	return "";
+	ifstream FILE(greetFile.c_str());
+	string line;
+	if (FILE.is_open()){
+		while (getline(FILE, line)){
+			cout << line << endl;
+		}
+		FILE.close();
+	}
 }
 
 int Planner::get_number_of_tasks()
