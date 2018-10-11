@@ -33,9 +33,14 @@ string Planner::get_random_task()
 {
 	int i = int(rand() % (get_number_of_tasks()));
 	string r = tasks[i];
-	tasks.erase(tasks.begin() + i);
+	remove_task(i);
 	decrease_num_of_tasks();
 	return r;
+}
+
+void Planner::remove_task(int i = 0)
+{
+	tasks.erase(tasks.begin() + i);
 }
 //Adds User input task into task vector
 void Planner::add_tasks(string t)
