@@ -26,12 +26,9 @@ int Planner::get_number_of_tasks()
 string Planner::get_random_task()
 {
 	srand(time(nullptr));
-	int i = int(rand() % get_number_of_tasks());
-	string temp = tasks[i];
-	tasks[i] = tasks[int(tasks.size() - 1)];
-	tasks[int(tasks.size() - 1)] = temp;
-	string r = tasks.back();
-	tasks.pop_back();
+	int i = int(rand() % (get_number_of_tasks() - 1));
+	string r = tasks[i];
+	tasks.erase(tasks.begin() + i);
 	return r;
 }
 
