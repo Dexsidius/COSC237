@@ -32,8 +32,8 @@ void get_tasks(Planner planner) {
 
 int main() {
 	Planner planner;
-	
-	cout << "Welcome to the Magic 8-Ball Planner! \n \n Do You want to use a file or input your tasks now? (f, i): ";
+	planner.display_greeting();
+	cout << "Do You want to use a file or input your tasks now? (f, i): ";
 	get_tasks(planner);
 
 	return 0;
