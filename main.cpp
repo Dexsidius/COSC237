@@ -47,6 +47,7 @@ void get_tasks(Planner & planner) {
 }
 
 int main() {
+	srand(time(nullptr));
 	Planner planner;
 	planner.display_greeting();
 	cout << "Do you want to use a file or input your tasks now? (f, i): ";

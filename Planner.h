@@ -21,7 +21,7 @@ public:
 	string get_random_task();
 	void add_tasks(string task);
 	void get_tasks_from_file(string file = "tasks.txt" );
-	void remove_task(int);
+	void remove_task_from_index(int index);
 	void decrease_num_of_tasks();
 private:
 	string greetFile = "greeting.txt";
