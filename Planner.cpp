@@ -31,10 +31,19 @@ void Planner::decrease_num_of_tasks()
 //Returns a random task from the vector and decrease the number of tasks
 string Planner::get_random_task()
 {
-	int i = int(rand() % (get_number_of_tasks()));
+	if (tasks.size() == 0) {
+		return "There are no more tasks!";
+	}
+	srand(time(nullptr));
+	int i = int(rand() % get_number_of_tasks());
 	string r = tasks[i];
+<<<<<<< HEAD
 	remove_task(i);
+=======
+	tasks.erase(tasks.begin()+i);
+>>>>>>> branch 'master' of https://github.com/Dexsidius/COSC237.git
 	decrease_num_of_tasks();
+
 	return r;
 }
 
