@@ -19,7 +19,13 @@ int Planner::get_number_of_tasks()
 string Planner::get_random_task()
 {
 	srand(time(nullptr));
-	return tasks[int(rand() % get_number_of_tasks())];
+	int i = int(rand() % get_number_of_tasks());
+	string temp = tasks[i];
+	tasks[i] = tasks[int(tasks.size() - 1)];
+	tasks[int(tasks.size() - 1)] = temp;
+	string r = tasks.back();
+	tasks.pop_back();
+	return r;
 }
 
 void Planner::add_tasks(string t)
@@ -28,7 +34,7 @@ void Planner::add_tasks(string t)
 	num_of_tasks += 1;
 }
 
-void Planner::get_tasks_from_file(string file = "tasks.txt")
+void Planner::get_tasks_from_file(string file)
 {
 	ifstream FILE(file.c_str());
 	string line;
