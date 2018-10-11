@@ -31,24 +31,18 @@ void Planner::decrease_num_of_tasks()
 //Returns a random task from the vector and decrease the number of tasks
 string Planner::get_random_task()
 {
-<<<<<<< HEAD
 	if (tasks.size() == 0) {
 		return "There are no more tasks!";
 	}
 	srand(time(nullptr));
 	int i = int(rand() % get_number_of_tasks());
 	string temp = tasks[i];
-	tasks[i] = tasks[int(tasks.size() - 1)];
-	tasks[int(tasks.size() - 1)] = temp;
+	tasks[i] = tasks[int(get_number_of_tasks() - 1)];
+	tasks[int(get_number_of_tasks() - 1)] = temp;
 	string r = tasks.back();
 	tasks.pop_back();
-	num_of_tasks -= 1;
-=======
-	int i = int(rand() % (get_number_of_tasks()));
-	string r = tasks[i];
-	tasks.erase(tasks.begin() + i);
 	decrease_num_of_tasks();
->>>>>>> 5b499c385ce4e42a5b4feb1769495ac80f16301a
+
 	return r;
 }
 //Adds User input task into task vector
