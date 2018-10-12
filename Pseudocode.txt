@@ -1,0 +1,87 @@
+﻿8 Ball Planner Pseudocode
+
+main.cpp
+void function display_tasks:
+	set tasks = 1
+	while planner number of tasks is greater than 0:
+		prompt user to press any key for a task
+		display random tasks
+
+void function get_tasks:
+	Declare string answer
+	initialize number_of_tasks at 0
+	Input answer
+	if answer = “f”:
+		Prompt user to enter file name
+		input answer
+		if answer = “” or “default”:
+			call get_tasks_from_file()
+		else:
+			get_tasks_from_file(answer)
+	else if answer = “i”:
+		prompt user to input number of tasks
+		set number_of_tasks to user input
+		declare task
+		for loop from 0 – number_of_tasks:
+			prompt user to input tasks
+			call add_tasks(task)
+
+int function main:
+	initialize planner class
+	call display_greeting
+	prompt user to input either “i” for user input or “f” for file input
+	call get_tasks(planner)
+	call display_tasks(planner)
+
+planner.h & planner.cpp
+
+class Planner:
+public:
+	prototype void function display_greeting()
+	prototype int function get_number_of_tasks()
+	prototype string get_random_task()
+	prototype void add_tasks(string task)
+	prototype void get_tasks_from_file(string file = “tasks.txt)
+	prototype void remove_task_from_index(int index)
+	prototype void decrease_num_tasks()
+private:
+	initialize string greetFile to “greeting.txt”
+	declare int num_of_tasks
+	declare string vector tasks
+
+void function display_greeting():
+	declare string line
+	declare ifstream FILE in read mode
+	if FILE is open:
+		while loop for each line that exists:
+			display line
+
+void function get_number_of_tasks():
+	return num_of_tasks
+
+void function decrease_num_of_tasks():
+	decrement num_of_tasks by 1
+
+string function get_random_task():
+	if task.size() = 0:
+		Display “There are no more tasks!”
+	assign i to random integer (0 – num_of_tasks)
+	assign r to task[i]
+	call remove_task_from_index(i)
+	call decrease_num_of_tasks()
+	
+	return r
+
+void function add_tasks(string t):
+	add t to vector tasks
+	increment num_of_tasks by 1
+	
+void function get_tasks_from_file(string file):
+	declare ifstream FILE to read mode
+	declare string line
+	if FILE is open:
+		while loop for each line that exists:
+			call add_tasks(line)
+
+void function remove_task_from_index(int index):
+	remove tasks[index] from vector
